@@ -1,25 +1,44 @@
 from bs4 import BeautifulSoup
-from googletrans import Translator
+from mtranslate import translate
+import requesets
+import lxml
+import concurrent.futures
 
-# Load the HTML file
-with open("path/to/html/file.html", "r") as f:
-    html = f.read()
+# read html file locally
+with open("C:/Users/juand/Documents/IA/ClassCentraltoHindiProject/WEB/emoocs-2023-cfp.html", encoding="utf-8") as fp:
+  response = fp.read()
 
-# Parse the HTML using Beautiful Soup
-soup = BeautifulSoup(html, "html.parser")
+# url = "https://juanzam21.github.io/ClassCentral"
 
-# Get all the text from the HTML
-text = soup.get_text()
+# download web page
+#response = requests.get(url)
 
-# Create a translator object
-translator = Translator()
+# parse the HTML
+soup = BeautifulSoup(response, "html.parser")
 
-# Translate the text to Hindi
-translated_text = translator.translate(text, dest="hi").text
+# find all text elements in the HTML
+text_elements = soup.find_all(string=True)
 
-# Replace the original text with the translated text
-soup.body.string = translated_text
 
-# Save the translated HTML file
-with open("path/to/translated/html/file.html", "w") as f:
-    f.write(str(soup))
+# define a function to translate a text element
+def translate_element(element):
+    if element.parent.name in ['script', 'style']:
+        return str(element)
+    try:
+        translated_text = translate(element, 'hi')
+        return translated_text
+    except:
+        return str(element)
+    
+
+# use multi-threading to translate the text elements
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    results = executor.map(translate_element, text_elements)
+
+# update the HTML with the translated text
+for element, translated_text in zip(text_elements, results):
+    element.replace_with(translated_text)
+
+# save the modified HTML
+with open("C:/Users/juand/Documents/IA/ClassCentraltoHindiProject/WEB/complete/emoocs-2023-cfp.html", "w", encoding="utf-8") as file:
+  file.write(str(soup))
