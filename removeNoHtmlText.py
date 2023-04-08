@@ -1,12 +1,16 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
-with open("C:/Users/juand/Documents/IA/ClassCentraltoHindiProject/WEB/coursera.html", encoding="utf-8") as fp:
-  response = fp.read()
+# Load the HTML file
+with open("C:/Users/karen/OneDrive/Documentos/AI/ClassCentral_Hindi/freecertificates.html", encoding="utf-8") as f:
+    html = f.read()
 
-soup = BeautifulSoup(html, 'html.parser')
-text = soup.get_text(separator='')
+# Create a BeautifulSoup object
+soup = BeautifulSoup(html, "html.parser")
 
-# Remove text that does not belong to any tag
-html = html.replace(text, '')
-
-print(html)
+# Remove all comments
+for comment in soup.find_all(text=lambda text: isinstance(text, Comment)):
+    comment.extract()
+    
+# save the modified HTML
+with open("C:/Users/karen/OneDrive/Documentos/AI/ClassCentral_Hindi/freecertificates.html", "w", encoding="utf-8") as file:
+  file.write(soup.prettify())
