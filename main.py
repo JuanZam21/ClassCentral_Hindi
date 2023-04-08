@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 from mtranslate import translate
-import requesets
 import lxml
 import concurrent.futures
 
