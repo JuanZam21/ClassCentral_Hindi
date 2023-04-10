@@ -1,2 +1,2 @@
-# ClassCentral_Hindi
-I made a complete one level deep translation to Hindi from a page called ClassCentral, this is all the py code used.
+# Blackjack Game
+I made a complete blackjack with all the functionalities needed, this is all the py code used.
