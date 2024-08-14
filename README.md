@@ -18,44 +18,37 @@ To get started with the Blackjack game, follow these steps:
    ```bash
    git clone https://github.com/YourUsername/BlackjackGame.git
    cd BlackjackGame
-Set up a Virtual Environment (Optional but recommended)
-
-bash
-Copy code
-python3 -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-Install Dependencies
+2. **Set up a Virtual Environment (Optional but recommended)**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+3. **Install Dependencies**
 There are no external dependencies for this project. The game runs with standard Python libraries.
 
-Usage
+## Usage
 To start the Blackjack game, run the following command:
-
-bash
-Copy code
-python main.py
+   ```bash
+   python main.py
+   ```
 This will launch the game in your terminal. Follow the on-screen instructions to play.
 
-Files Overview
-main.py: The main entry point of the Blackjack game.
-optimized.py: A version of the game with optimized performance.
-testing.py: Contains unit tests for the game.
-.gitignore: Specifies files and directories to be ignored by Git.
-README.md: Provides documentation and instructions for the repository.
-Testing
+## Files Overview
+`main.py`: The main entry point of the Blackjack game.
+`optimized.py`: A version of the game with optimized performance.
+`testing.py`: Contains unit tests for the game.
+`.gitignore`: Specifies files and directories to be ignored by Git.
+`README.md`: Provides documentation and instructions for the repository.
+
+##Testing
 To run the tests included in the testing.py file, use the following command:
 
-bash
-Copy code
+```bash
 python testing.py
+
 Ensure that the game functions correctly by checking the output of the tests.
 
-Contributing
+## Contributing
 Contributions are welcome! If you have any improvements or bug fixes, please open a pull request. Make sure to update the tests as needed.
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-vbnet
-Copy code
-
-If this looks good, I can save it to the `README.md` file in your project. Let me know if you'd like any changes!
