@@ -39,12 +39,12 @@ This will launch the game in your terminal. Follow the on-screen instructions to
 `.gitignore`: Specifies files and directories to be ignored by Git.
 `README.md`: Provides documentation and instructions for the repository.
 
-##Testing
+## Testing
 To run the tests included in the testing.py file, use the following command:
 
 ```bash
 python testing.py
-
+```
 Ensure that the game functions correctly by checking the output of the tests.
 
 ## Contributing
