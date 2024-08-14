@@ -33,11 +33,11 @@ To start the Blackjack game, run the following command:
 This will launch the game in your terminal. Follow the on-screen instructions to play.
 
 ## Files Overview
-`main.py`: The main entry point of the Blackjack game.
-`optimized.py`: A version of the game with optimized performance.
-`testing.py`: Contains unit tests for the game.
-`.gitignore`: Specifies files and directories to be ignored by Git.
-`README.md`: Provides documentation and instructions for the repository.
+- `main.py`: The main entry point of the Blackjack game.
+- `optimized.py`: A version of the game with optimized performance.
+- `testing.py`: Contains unit tests for the game.
+- `.gitignore`: Specifies files and directories to be ignored by Git.
+- `README.md`: Provides documentation and instructions for the repository.
 
 ## Testing
 To run the tests included in the testing.py file, use the following command:
